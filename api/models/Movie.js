@@ -1,3 +1,14 @@
+/* The schema defines the shape of a movie document,
+ with fields such as title, desc (description), img (poster image),
+  trailer, video, year, limit (age limit), genre, and 
+  isSeries (boolean indicating if the movie is a series).
+
+The schema also includes timestamps, 
+which means that each document will have 
+createdAt and updatedAt fields automatically managed by Mongoose.*/
+
+
+
 const mongoose = require("mongoose");
 
 
@@ -15,12 +26,14 @@ const MovieSchema = new mongoose.Schema(
     img: {
         type: String,
     },
+    imgTitle: { 
+        type: String 
+    },
     imgSm: {
         type: String,
-        default: ""
     },
     trailer: {
-        type: Boolean
+        type: String
     },
     video:{
         type:String
